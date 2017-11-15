@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Inheritance</title>
+</head>
+<body bgcolor="#99CC66">
+    <hr>
+    <img src="img/InheritanceNav.png" style="max-width: 100%";>
+    <hr>
+    <font color="#4D4D4D" face="Arial" size="4">
+        <hr>
+        <form method="post" th:action="@{/}" th:object="${userInputModel}" style="margin-left: 10%">
+            Names of our prepared heroes: <p th:if="${list}!=null" th:text="${list}"></p><br>
+            Enter Ancestor name: <input type="text" th:field="*{ancestor}"><br>
+            Enter Descendant name: <input type="text" th:field="*{descendant}"><br><br>
+            <center><input type="submit" value="check inheritance" size="5" style="width:20%; height: 30px; background-color: darkorange"></center><br>
+        </form>
+        <hr>
+        <center><b><p th:if="${message}!=null" th:text="${message}" ></p></b></center>
+        <center><b><p th:if="${bonus}!=null" th:text="${bonus}" ></p></b></center>
+        <hr>
+        <i>
+            <footer>
+                <b><p>EXPECTED RESULTS SHOULD BE: (Ancestor) -> (Descendant)</p></b>
+                <p>Aerys-> Rheagar -> Jon</p>
+                <p>Aerys -> Jon</p>
+                <p>Eddard -> Rob</p>
+                <p>Tywin -> Tyrion</p>
+                <p>Tywin -> Jaime -> Joffrey & Tommen</p>
+                <p>Tywin -> Joffrey & Tommen</p>
+            </footer>
+        </i>
+
+    </font>
+    <hr>
+</body>
+</html>
