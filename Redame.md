@@ -1,3 +1,6 @@
+#Java Basic by AkademiaKodu.pl 2017
+
+
 Your task is to implements only extensions and implementations of class in folder 
 
 ’../entities/’ 
