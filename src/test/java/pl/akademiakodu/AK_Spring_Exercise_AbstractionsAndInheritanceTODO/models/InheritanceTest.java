@@ -6,22 +6,26 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * Test class
+ */
 public class InheritanceTest {
 
     private static Inheritance inheritance;
 
-    @BeforeClass
-    public static void start() {
+    @BeforeClass public static void start() {
         inheritance = new Inheritance();
     }
 
-    @AfterClass
-    public static void stop() throws Exception {
+    @AfterClass public static void stop() throws Exception {
         inheritance = null;
     }
 
-    @Test
-    public void test1() throws Exception {
+    /**
+     * Method testing proper working of inheritance service.
+     * @throws Exception in case of incorrect user inputs
+     */
+    @Test public void testInheritance() throws Exception {
         assertNotNull(inheritance.getHeroes());
         assertTrue(inheritance.isCorrectName("Jon", "Rob"));
         assertTrue(inheritance.isCorrectName("Aerys", "Eddard"));
