@@ -1,21 +1,28 @@
 package pl.akademiakodu.AK_Spring_Exercise_AbstractionsAndInheritanceTODO.models;
 
-
+/**
+ * Import section
+ */
 import org.springframework.stereotype.Service;
 import pl.akademiakodu.AK_Spring_Exercise_AbstractionsAndInheritanceTODO.models.entities.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Service check if entities classes are relevant by hierarchy of inheritance in proper way
+ */
 @Service
 public class Inheritance {
 
+    /**
+     * heroes variables will store in this case list of available heroes
+     */
     private List<Human> heroes;
 
-    public List<Human> getHeroes() {
-        return heroes;
-    }
-
+    /**
+     * Constructor also will fill list of heroes
+     */
     public Inheritance() {
         heroes = new ArrayList<>();
         heroes.add(new Eddard());
@@ -30,7 +37,12 @@ public class Inheritance {
         heroes.add(new Jon());
     }
 
-
+    /**
+     * Method will check if one class derived from other listed class
+     * @param ancestorName parent class
+     * @param descendantName child class
+     * @return inheritance result as string
+     */
     public String isDescendant(String ancestorName, String descendantName){
         if (!isCorrectName(ancestorName, descendantName)){
             return "We do not have typed heroes in our database..";
@@ -56,6 +68,12 @@ public class Inheritance {
         return "Unfortunately " + descendantName + " do not inheritance from " + ancestorName;
     }
 
+    /**
+     * This method check if potential user input entered proper hero name.
+     * @param ancestorName parent hero name
+     * @param descendantName child hero name
+     * @return result of corrected name
+     */
     public boolean isCorrectName(String ancestorName, String descendantName){
         boolean aName = false;
         boolean dName = false;
@@ -73,6 +91,10 @@ public class Inheritance {
         return true;
     }
 
+    /**
+     * Method will provide all available heroes separated by comas. It will show to user all available heroes names.
+     * @return string with all heroes names
+     */
     public String getHeroesNames(){
         StringBuilder sb = new StringBuilder();
         for (Human hero : getHeroes()) {
@@ -81,6 +103,12 @@ public class Inheritance {
         return sb.toString();
     }
 
+    /**
+     * Method inform us about proper inheritance of listed heroes
+     * @param ancestorName parent hero name
+     * @param descendantName child hero name
+     * @return result of corrected name
+     */
     public boolean bTest(String ancestorName, String descendantName){
         if (isDescendant(ancestorName, descendantName).equals(descendantName + " inheritance from " + ancestorName)){
             return true;
@@ -88,6 +116,10 @@ public class Inheritance {
         return false;
     }
 
+    /**
+     * Method test listed inheritance
+     * @return result of inheritance
+     */
     public boolean bonusTest(){
         boolean b = false;
         b = bTest("Aerys", "Rhaegar");
@@ -101,5 +133,13 @@ public class Inheritance {
         b = bTest("Jaime", "Joffrey");
         b = bTest("Jaime", "Tommen");
         return b;
+    }
+
+    /**
+     * Getter section
+     * @return already defined and filled list of heroes
+     */
+    public List<Human> getHeroes() {
+        return heroes;
     }
 }
