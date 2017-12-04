@@ -1,11 +1,13 @@
 package pl.akademiakodu.AK_Spring_Exercise_AbstractionsAndInheritanceTODO.models;
 
 
+import org.springframework.stereotype.Service;
 import pl.akademiakodu.AK_Spring_Exercise_AbstractionsAndInheritanceTODO.models.entities.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class Inheritance {
 
     private List<Human> heroes;

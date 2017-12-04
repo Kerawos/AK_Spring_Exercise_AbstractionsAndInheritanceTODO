@@ -1,5 +1,7 @@
 package pl.akademiakodu.AK_Spring_Exercise_AbstractionsAndInheritanceTODO.models;
-
+/**
+ * Holder for user inputs getting in this example from formular
+ */
 public class UserInputModel {
 
     private String ancestor;
